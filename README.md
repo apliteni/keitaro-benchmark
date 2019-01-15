@@ -16,6 +16,13 @@
     admin
     1l5NyFFbm9f0Jcfs
 
+Локальный лендинг
+    sudo -u nginx mkdir -p -m 777 /var/www/keitaro/landers/local-land
+    curl -sL https://github.com/apliteni/keitaro-benchmark/raw/master/datasets/lp.zip > /var/www/keitaro/landers/local-land/lp.zip
+    cd  /var/www/keitaro/landers/local-land/
+    sudo -u nginx unzip lp.zip
+    sudo -u nginx php /var/www/keitaro/bin/cli.php  system:reload_cache
+
 ## Запуск тестов YandexTank
 
 Установка Docker
@@ -28,7 +35,7 @@
 
 Скопируйте конфиг теста
 
-    cp tests/test1.example.yml tests/test1.yml
+    cp tests/example.yml tests/test1.yml
 
 Пропишите в файлах tests/ вместо `TRACKER_URL` домен/ip трекера.
 
