@@ -1,0 +1,17 @@
+overload:
+  enabled: true
+  package: yandextank.plugins.DataUploader
+  token_file: token.txt
+phantom:
+  address: TRACKER_URL
+  ssl: true
+  load_profile:
+    load_type: rps
+    schedule: line(1, 10, 1m)
+  uris:
+    - /qFYTh15B
+  #headers:
+  #  - "[X-Forwarded: 82.22.44.21]"
+  #  - "[X-Forwarded: 82.22.44.21]"
+telegraf:
+  enabled: false
