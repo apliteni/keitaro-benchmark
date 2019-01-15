@@ -2,7 +2,7 @@
 
 Загрузите перед установкой нового трекера дамп базы
 
-    wget https://github.com/apliteni/keitaro-benchmark/raw/master/datasets/dataset1.sql.gz -O dump.gz
+    curl -sL https://github.com/apliteni/keitaro-benchmark/raw/master/datasets/dataset1.sql.gz > dump.gz
 
 
 Данные для входа
