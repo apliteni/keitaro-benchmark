@@ -1,6 +1,9 @@
 # Keitaro Benchmark
 
 ## Установка тестового трекера
+
+Выполняется на сестовом сервере.
+
 Загрузите перед установкой нового трекера дамп базы
 
     curl -sL https://github.com/apliteni/keitaro-benchmark/raw/master/datasets/dataset1.sql.gz > dump.gz
@@ -23,13 +26,17 @@
     sudo -u nginx unzip lp.zip
     sudo -u nginx php /var/www/keitaro/bin/cli.php  system:reload_cache
 
-## Установка Telegraf для сбора метрик
 
-    ansible-galaxy install rossmcdonald.telegraf
-    curl -sL https://github.com/apliteni/keitaro-benchmark/raw/master/ansible/telegraf.yml > telegraf.yml
-    ansible-playbook telegraf.yml -i ,localhost
+Ключ для авторизациии с Telegraf
+
+    openssl genrsa -out ssh/id_rsa 2048
+    ssh-keygen -f ssh/id_rsa -y > ssh/id_rsa.pub
+    ssh-copy-id -i ssh/id_rsa root@server_ip
+    chmod 400 ssh/id_rsa
 
 ## Запуск тестов YandexTank
+
+YandexTank запускается на локальной машине.
 
 Установка Docker
 
@@ -45,7 +52,6 @@
 
 Пропишите в файлах tests/ вместо `TRACKER_URL` домен/ip трекера.
 
-
 Запуск контейнера
 
     ./bin/yandex-tank.sh
@@ -53,3 +59,11 @@
 Запуск теста
 
     yandex-tank -c tests/test1.yml
+
+
+
+## Установка Telegraf на тестовый сервер (не обязательно)
+
+    ansible-galaxy install rossmcdonald.telegraf
+    curl -sL https://github.com/apliteni/keitaro-benchmark/raw/master/telegraf/telegraf.yml > telegraf.yml
+    ansible-playbook telegraf.yml -i ,localhost

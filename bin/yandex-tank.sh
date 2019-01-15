@@ -1,6 +1,6 @@
 docker run \
     -v $(pwd):/var/loadtest \
-    -v $SSH_AUTH_SOCK:/ssh-agent -e SSH_AUTH_SOCK=/ssh-agent \
+    -v $(pwd)/ssh:/root/.ssh \
     --net host \
     --entrypoint /bin/bash \
     -it direvius/yandex-tank

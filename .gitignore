@@ -7,3 +7,6 @@ token.txt
 todo
 *.log
 jobno_file.txt
+ssh/id_rsa*
+ssh/known_hosts
+/*.cfg
