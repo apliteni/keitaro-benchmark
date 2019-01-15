@@ -14,4 +14,5 @@ phantom:
   #  - "[X-Forwarded: 82.22.44.21]"
   #  - "[X-Forwarded: 82.22.44.21]"
 telegraf:
-  enabled: false
+  enabled: true
+  package: yandextank.plugins.Telegraf

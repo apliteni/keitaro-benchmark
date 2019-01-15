@@ -5,3 +5,5 @@ tests/*.yml
 logs
 token.txt
 todo
+*.log
+jobno_file.txt

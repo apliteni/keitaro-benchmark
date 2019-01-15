@@ -23,6 +23,12 @@
     sudo -u nginx unzip lp.zip
     sudo -u nginx php /var/www/keitaro/bin/cli.php  system:reload_cache
 
+## Установка Telegraf для сбора метрик
+
+    ansible-galaxy install rossmcdonald.telegraf
+    curl -sL https://github.com/apliteni/keitaro-benchmark/raw/master/ansible/telegraf.yml > telegraf.yml
+    ansible-playbook telegraf.yml -i ,localhost
+
 ## Запуск тестов YandexTank
 
 Установка Docker
