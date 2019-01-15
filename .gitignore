@@ -1,1 +1,7 @@
 .idea
+validation_error.yaml
+tests/*.yml
+!tests/*.example.yml
+logs
+token.txt
+todo
