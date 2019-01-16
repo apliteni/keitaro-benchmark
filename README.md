@@ -19,12 +19,9 @@
     admin
     1l5NyFFbm9f0Jcfs
 
-Локальный лендинг
-    sudo -u nginx mkdir -p -m 777 /var/www/keitaro/landers/local-land
-    curl -sL https://github.com/apliteni/keitaro-benchmark/raw/master/datasets/lp.zip > /var/www/keitaro/landers/local-land/lp.zip
-    cd  /var/www/keitaro/landers/local-land/
-    sudo -u nginx unzip lp.zip
-    sudo -u nginx php /var/www/keitaro/bin/cli.php  system:reload_cache
+Загрузка локального лендинга
+
+    ./bin/install-lp.sh
 
 
 Ключ для авторизациии с Telegraf
@@ -60,7 +57,11 @@ YandexTank запускается на локальной машине.
 
     yandex-tank -c tests/test1.yml
 
+## Blackfire
 
+    ./bin/install-blackfire.sh
+
+Во время установки будут запрашиваться параметры со страницы [https://blackfire.io/docs/up-and-running/installation].
 
 ## Установка Telegraf на тестовый сервер (не обязательно)
 
