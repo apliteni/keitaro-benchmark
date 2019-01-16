@@ -8,6 +8,11 @@
 
     curl -sL https://github.com/apliteni/keitaro-benchmark/raw/master/datasets/dataset1.sql.gz > dump.gz
 
+
+Установка определенной сборки
+
+    yum update -y && curl keitaro.io/install.sh > run && bash run -a http://domain/some_release.zip
+
 Во время установки:
 
     Укажите путь к файлу c SQL дампом > dump.gz
