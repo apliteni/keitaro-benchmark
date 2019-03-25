@@ -30,15 +30,22 @@
     cd keitaro-benchmark
     sh ./bin/install-lp.sh
 
+Примеры кампаний:
 
-Ключ для авторизациии с Telegraf
+    http://x.x.x.x/nxJKck
+    http://x.x.x.x/VPGvy3Zs
+    http://x.x.x.x/gjdzXsYV
+
+
+## Запуск benchmark-тестов YandexTank
+
+Ключ для авторизациии с Telegraf 
 
     openssl genrsa -out ssh/id_rsa 2048
     ssh-keygen -f ssh/id_rsa -y > ssh/id_rsa.pub
     ssh-copy-id -i ssh/id_rsa root@server_ip
     chmod 400 ssh/id_rsa
 
-## Запуск тестов YandexTank
 
 YandexTank запускается на локальной машине.
 
