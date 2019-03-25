@@ -28,7 +28,7 @@
 
     git clone https://github.com/apliteni/keitaro-benchmark.git
     cd keitaro-benchmark
-    ./bin/install-lp.sh
+    sh ./bin/install-lp.sh
 
 
 Ключ для авторизациии с Telegraf
