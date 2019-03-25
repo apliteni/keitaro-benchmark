@@ -30,6 +30,11 @@
     cd keitaro-benchmark
     sh ./bin/install-lp.sh
 
+Запуск миграций
+
+    sudo -u keitaro php /var/www/keitaro/bin/cli.php  db:migrate
+
+
 Примеры кампаний:
 
     http://x.x.x.x/nxJKck
@@ -37,48 +42,56 @@
     http://x.x.x.x/gjdzXsYV
 
 
-## Запуск benchmark-тестов YandexTank
-
-Ключ для авторизациии с Telegraf 
+Создайте локально ssh-ключ 
 
     openssl genrsa -out ssh/id_rsa 2048
     ssh-keygen -f ssh/id_rsa -y > ssh/id_rsa.pub
-    ssh-copy-id -i ssh/id_rsa root@server_ip
     chmod 400 ssh/id_rsa
 
+## Устнаовка Telegraf (для сбора метрик с сервера)
 
-YandexTank запускается на локальной машине.
+Запустите на сервере:
+
+    ansible-galaxy install rossmcdonald.telegraf
+    curl -sL https://github.com/apliteni/keitaro-benchmark/raw/master/telegraf/telegraf.yml > telegraf.yml
+    ansible-playbook telegraf.yml -i ,localhost
+
+    
+Установите ключ авторизации в authorized_keys или утилитой ssh-copy-id:
+
+    ssh-copy-id -i ssh/id_rsa root@server_ip
+
+
+## Запуск benchmark-тестов YandexTank
+
+YandexTank запускается с локальной машины.
 
 Установка Docker
 
     ./bin/install-docker
 
-Установка токена с overload.yandex.net
+Настройка токена доступа к overload.yandex.net
 
     ./bin/token.sh
 
-Скопируйте конфиг теста
+Создайте свой тест
 
-    cp tests/example.yml tests/test1.yml
+    cp tests/example.yml tests/my-test.yml
 
-Пропишите в файлах tests/ вместо `TRACKER_URL` домен/ip трекера.
+Пропишите в файлах tests/ вместо `TRACKER_URL` домен/ip сервера, где стоит Keitaro.
 
-Запуск контейнера
+Запустите контейнер и зайдите в его терминал:
 
     ./bin/yandex-tank.sh
 
-Запуск теста
+Запустите свой тест в контейнере
 
-    yandex-tank -c tests/test1.yml
+    yandex-tank -c tests/my-test.yml
 
-## Blackfire
+## Blackfire.io
+
+Этим скриптом можно поставить blackfire и настроить его:
 
     ./bin/install-blackfire.sh
 
 Во время установки будут запрашиваться параметры со страницы [https://blackfire.io/docs/up-and-running/installation].
-
-## Установка Telegraf на тестовый сервер (не обязательно)
-
-    ansible-galaxy install rossmcdonald.telegraf
-    curl -sL https://github.com/apliteni/keitaro-benchmark/raw/master/telegraf/telegraf.yml > telegraf.yml
-    ansible-playbook telegraf.yml -i ,localhost
