@@ -59,7 +59,7 @@
     
 Установите ключ авторизации в authorized_keys или утилитой ssh-copy-id:
 
-    ssh-copy-id -i ssh/id_rsa root@server_ip
+    ssh-copy-id -i ssh/id_rsa root@X.X.X.X
 
 
 ## Запуск benchmark-тестов YandexTank

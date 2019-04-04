@@ -5,3 +5,4 @@ sudo blackfire-agent -register
 sudo /etc/init.d/blackfire-agent restart
 sudo yum install blackfire-php -y
 blackfire config
+service php72-php-fpm restart
