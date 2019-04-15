@@ -30,11 +30,6 @@
     cd keitaro-benchmark
     sh ./bin/install-lp.sh
 
-Запуск миграций
-
-    sudo -u keitaro php /var/www/keitaro/bin/cli.php  db:migrate
-
-
 Примеры кампаний:
 
     http://x.x.x.x/nxJKck
