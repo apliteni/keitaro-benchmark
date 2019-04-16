@@ -26,9 +26,7 @@
 
 Загрузка локального лендинга
 
-    git clone https://github.com/apliteni/keitaro-benchmark.git
-    cd keitaro-benchmark
-    sh ./bin/install-lp.sh
+    curl -fsSL https://raw.githubusercontent.com/apliteni/keitaro-benchmark/master/bin/install-lp.sh | bash
 
 Примеры кампаний:
 
