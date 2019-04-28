@@ -33,7 +33,7 @@
     http://x.x.x.x/nxJKck
     http://x.x.x.x/VPGvy3Zs
     http://x.x.x.x/gjdzXsYV
-
+    http://x.x.x.x/debug
 
 Создайте локально ssh-ключ 
 
