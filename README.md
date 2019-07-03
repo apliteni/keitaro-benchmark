@@ -11,13 +11,11 @@
 
 Установка определенной сборки
 
-    yum update -y && curl keitaro.io/install.sh > run && bash run -a http://domain/some_release.zip
+    yum update -y && curl -fsSL keitaro.io/install.sh > run && bash run -a http://domain/some_release.zip
 
-Во время установки:
+Установка с указанием дампа (соль: test, ключ лицензии: AAAA-BBBB-CCCC-DDDD, ip: 123.234.34.45):
 
-    Укажите путь к файлу c SQL дампом > dump.gz
-    Проверяем SQL дамп . OK
-    Укажите значение параметра salt из старой конфигурации (application/config/config.ini.php) > test
+    yum update -y && curl -fsSL keitaro.io/install.sh > run && bash run -F dump.gz -S test -A 123.234.34.45 -K AAAA-BBBB-CCCC-DDDD
 
 Данные для входа
 
