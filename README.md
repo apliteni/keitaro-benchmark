@@ -8,14 +8,17 @@
 
     curl -sL https://github.com/apliteni/keitaro-benchmark/raw/master/datasets/dataset1.sql.gz > dump.gz
 
-
-Установка определенной сборки
-
-    yum update -y && curl -fsSL keitaro.io/install.sh > run && bash run -a http://domain/some_release.zip
-
 Установка с указанием дампа (соль: test, ключ лицензии: AAAA-BBBB-CCCC-DDDD, ip: 123.234.34.45):
 
-    yum update -y && curl -fsSL keitaro.io/install.sh > run && bash run -F dump.gz -S test -A 123.234.34.45 -K AAAA-BBBB-CCCC-DDDD
+    yum update -y && \
+        curl -fsSL keitaro.io/install.sh > run && \
+        bash run -F dump.gz -S test -A 123.234.34.45 -K AAAA-BBBB-CCCC-DDDD
+
+Для установки определенной сборки нужно указать URL со сборкой через параметр `-a`
+
+    yum update -y && \
+        curl -fsSL keitaro.io/install.sh > run && \
+        bash run -F dump.gz -S test -A 123.234.34.45 -K AAAA-BBBB-CCCC-DDDD -a http://domain/some_release.zip
 
 Данные для входа
 
