@@ -10,3 +10,4 @@ jobno_file.txt
 ssh/id_rsa*
 ssh/known_hosts
 /*.cfg
+.DS_Store
