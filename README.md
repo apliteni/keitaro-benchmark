@@ -10,13 +10,11 @@
 
 Установка с указанием дампа (соль: test, ключ лицензии: AAAA-BBBB-CCCC-DDDD, ip: 123.234.34.45):
 
-    yum update -y && \
         curl -fsSL keitaro.io/install.sh > run && \
         bash run -F dump.gz -S test -A 123.234.34.45 -K AAAA-BBBB-CCCC-DDDD
 
 Для установки определенной сборки нужно указать URL со сборкой через параметр `-a`
 
-    yum update -y && \
         curl -fsSL keitaro.io/install.sh > run && \
         bash run -F dump.gz -S test -A 123.234.34.45 -K AAAA-BBBB-CCCC-DDDD -a http://domain/some_release.zip
 
